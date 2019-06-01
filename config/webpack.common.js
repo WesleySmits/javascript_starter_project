@@ -23,6 +23,24 @@ module.exports = {
             options: {
               sourceMap: true
             }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              sourceMap: true,
+              plugins: [
+                require('postcss-import')(),
+                require('postcss-at-rules-variables')(),
+                require('postcss-each')(),
+                require('postcss-nested')(),
+                require('postcss-preset-env')({
+                  stage: 0,
+                  autoprefixer: { grid: false },
+                  browsers: ['last 2 versions', 'IE 10', '> 5% in NL']
+                }),
+              ]
+            }
           }
         ]
       }
