@@ -110,6 +110,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_app_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_app_css__WEBPACK_IMPORTED_MODULE_0__);
 
 
+function returnTrue() {
+  return true;
+}
+
 /***/ })
 
 /******/ });
