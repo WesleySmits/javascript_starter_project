@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "JavaScript starter project",
   "scripts": {
-    "start": "npm-run-all --parallel webpack-watch-dev dev-server",
+    "start": "npm-run-all --parallel webpack-watch-dev dev-server share lint:watch",
     "prod": "./node_modules/.bin/webpack -p --progress --config=config/webpack.production.js --mode production",
     "webpack-watch-dev": "./node_modules/.bin/webpack -p --progress --config=config/webpack.development.js --mode development",
     "dev-server": "webpack-dev-server --open --config=config/webpack.development.js",
-    "share": "lt --port 8080"
+    "share": "lt --port 8080",
+    "lint": "esw ./config/webpack.config.* app --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "author": "Wesley Smits",
   "license": "MIT",
@@ -23,6 +25,9 @@
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
     "css-loader": "^2.1.1",
+    "eslint": "3.8.1",
+    "eslint-plugin-import": "2.0.1",
+    "eslint-watch": "2.1.14",
     "localtunnel": "^1.9.1",
     "mini-css-extract-plugin": "^0.7.0",
     "npm-run-all": "^4.1.5",
