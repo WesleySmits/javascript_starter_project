@@ -86,14 +86,29 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./app/css/app.css":
+/*!*************************!*\
+  !*** ./app/css/app.css ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./app/js/app.js":
 /*!***********************!*\
   !*** ./app/js/app.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-alert('hello world');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _css_app_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/app.css */ "./app/css/app.css");
+/* harmony import */ var _css_app_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_app_css__WEBPACK_IMPORTED_MODULE_0__);
+
 
 /***/ })
 

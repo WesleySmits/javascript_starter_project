@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "JavaScript starter project",
   "scripts": {
-    "start": "./node_modules/.bin/webpack -p --progress --config=config/webpack.development.js --mode development",
-    "prod": "./node_modules/.bin/webpack -p --progress --config=config/webpack.dtap-production.js --mode production"
+    "start": "npm-run-all --parallel webpack-watch-dev dev-server",
+    "prod": "./node_modules/.bin/webpack -p --progress --config=config/webpack.production.js --mode production",
+    "webpack-watch-dev": "./node_modules/.bin/webpack -p --progress --config=config/webpack.development.js --mode development",
+    "dev-server": "webpack-dev-server --open --config=config/webpack.development.js",
+    "share": "lt --port 8080"
   },
   "author": "Wesley Smits",
   "license": "MIT",
@@ -19,6 +22,10 @@
     "babel-loader": "^8.0.6",
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
+    "css-loader": "^2.1.1",
+    "localtunnel": "^1.9.1",
+    "mini-css-extract-plugin": "^0.7.0",
+    "npm-run-all": "^4.1.5",
     "postcss-at-rules-variables": "^0.1.7",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-each": "^0.10.0",
@@ -29,6 +36,7 @@
     "postcss-reporter": "^6.0.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.0",
     "webpack-merge": "^4.2.1"
   }
 }

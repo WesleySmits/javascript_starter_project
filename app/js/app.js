@@ -1,1 +1,1 @@
-alert('hello world');
+import app from '../css/app.css';
