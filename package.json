@@ -2,18 +2,25 @@
   "name": "javascript-starter-project",
   "version": "1.0.0",
   "description": "JavaScript starter project",
-  "scripts": {},
+  "scripts": {
+    "start": "./node_modules/.bin/webpack -p --progress --config=config/webpack.development.js --mode development",
+    "prod": "./node_modules/.bin/webpack -p --progress --config=config/webpack.dtap-production.js --mode production"
+  },
   "author": "Wesley Smits",
   "license": "MIT",
   "dependencies": {
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-preset-latest": "^6.24.1",
-    "babel-register": "^6.26.0"
+    "babel-register": "^6.26.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-merge": "^4.2.1"
   }
 }
