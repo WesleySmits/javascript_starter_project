@@ -1,0 +1,19 @@
+{
+  "name": "javascript-starter-project",
+  "version": "1.0.0",
+  "description": "JavaScript starter project",
+  "scripts": {},
+  "author": "Wesley Smits",
+  "license": "MIT",
+  "dependencies": {
+    "whatwg-fetch": "1.0.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0"
+  }
+}
