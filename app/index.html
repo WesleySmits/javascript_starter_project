@@ -8,8 +8,32 @@
   <link rel="stylesheet" href="./bundle.css" />
 </head>
 <body>
-  <h1>Hello World</h1>
+  <h1>Users</h1>
 
-  <script src="./bundle.js"></script>
+  <table>
+    <thead>
+      <tr>
+          <th>&nbsp;</th>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+      </tr>
+    </thead>
+
+    <tbody id="users">
+
+    </tbody>
+  </table>
+
+  <template id="user-template">
+    <tr data-id="{{id}}">
+        <td><a href="#" data-role="delete">Delete</a></td>
+        <td>{{id}}</td>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+        <td>{{email}}</td>
+    </tr>
+  </template>
 </body>
 </html>

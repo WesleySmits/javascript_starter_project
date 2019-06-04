@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript starter project",
   "scripts": {
-    "start": "npm-run-all --parallel webpack-watch-dev dev-server share lint:watch test:watch",
+    "start": "npm-run-all --parallel webpack-watch-dev dev-server share lint:watch test:watch start-mockapi",
     "prod": "./node_modules/.bin/webpack -p --progress --config=config/webpack.production.js --mode production",
     "webpack-watch-dev": "./node_modules/.bin/webpack -p --progress --config=config/webpack.development.js --mode development",
     "dev-server": "webpack-dev-server --open --config=config/webpack.development.js",
@@ -11,27 +11,37 @@
     "lint": "esw ./config/webpack.config.* app --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress build/testSetup.js \"app/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node build/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch app/js/api/db.json --port 3001"
   },
   "author": "Wesley Smits",
   "license": "MIT",
   "dependencies": {
+    "cssnano": "^4.1.10",
+    "uglifyjs-webpack-plugin": "^2.1.3",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
+    "chalk": "^2.4.2",
     "css-loader": "^2.1.1",
     "eslint": "3.8.1",
     "eslint-plugin-import": "2.0.1",
     "eslint-watch": "2.1.14",
+    "html-webpack-plugin": "^3.2.0",
     "jsdom": "^15.1.1",
+    "json-schema-faker": "^0.5.0-rc17",
+    "json-server": "^0.15.0",
     "localtunnel": "^1.9.1",
     "mini-css-extract-plugin": "^0.7.0",
     "mocha": "^6.1.4",
@@ -48,6 +58,7 @@
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.5.0",
+    "webpack-md5-hash": "0.0.6",
     "webpack-merge": "^4.2.1"
   }
 }
