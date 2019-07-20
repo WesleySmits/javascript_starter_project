@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript starter project",
   "scripts": {
-    "start": "npm-run-all --parallel webpack-watch-dev dev-server share lint:watch test:watch start-mockapi",
+    "start": "npm-run-all --parallel webpack-watch-dev dev-server share lint:watch test:watch",
     "prod": "./node_modules/.bin/webpack -p --progress --config=config/webpack.production.js --mode production",
     "webpack-watch-dev": "./node_modules/.bin/webpack -p --progress --config=config/webpack.development.js --mode development",
     "dev-server": "webpack-dev-server --open --config=config/webpack.development.js",
